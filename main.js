@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
    
 })
 
-
 function formSubmitEvent() {
     let name = document.getElementById("custname").value;
     let address = document.getElementById("street").value;
@@ -16,25 +15,59 @@ function formSubmitEvent() {
 
     // we could do much better validation, but that's not the point of this example!
     if (name.length > 2 && address.length > 2 && city.length > 2 && state.length > 1 && zip.length == 5) {
-        document.getElementById("experience").disabled = false;
-        document.getElementById("receipt").value = ++orderNumber;
-        document.getElementById("visitdate").value = new Date();
     }
     else {
         alert("please fill in all fields");
     }
 }
+  
+    var theForm = document.forms["pizzaform"];
+    var pizza_prices = new Array();
+    pizza_prices["Small"]=7;
+    pizza_prices["Medium"]=10;
+    pizza_prices["Large"]=14;
 
-function handleClick(RadioElement) {
-    // hanlde select value
-    var sel = document.getElementById('ordertype');
+//price based on the size
+function getPizzaSizePrice()
+{
+    var pizzaSizePrice=0;
+    var theForm = document.forms["pizzaform"];
+    var selectedPizza = theForm.elements["selectedpizza"];
+    for(var i = 0; i < selectedCake.length; i++)
+    {
+        if(selectedCake[i].checked)
+        {
+            cakeSizePrice = cake_prices[selectedCake[i].value];
+            break;
+        }
+    }
 
-    // handle radio button
-    var selectedValue = RadioElement.value;
-    if (selectedValue == "yes") {
-        alert("Thank you for your " + sel.value + " order.");
-    }
-    else {
-        alert("Please call customer service at 800-555-5555 and give them this order number: " + orderNumber);
-    }
+    return pizzaSizePrice;
+}
+{
+var toppings_prices= new Array();
+toppings_prices["None"]=0;
+toppings_prices["oneTopping"]=2;
+toppings_prices["twoTopping"]=3;
+}
+function getToppingPrice()
+{
+    var pizzaToppingPrice=0;
+ 
+    var theForm = document.forms["pizzaform"];
+     var selectedTopping = theForm.elements["topping"];
+    pizzaToppingPrice = topping_prices[selectedTopping.value];
+    return pizzaToppingPrice;
+}
+
+function getTotal()
+{
+    //Here we get the total price by calling our function
+    //Each function returns a number so by calling them we add the values they return together
+    var pizzaPrice = getPizzaSizePrice() + getToppingPrice();
+
+    //display the result
+    document.getElementById('totalPrice').innerHTML =
+                                      "Total Price For Pizza $"+pizzaPrice;
+
 }
