@@ -40,25 +40,27 @@
 
     </fieldset>
 
-    <fieldset id="experience">
-      <legend>Share Your Experience</legend>
+    <form action="" id="pizzaform" onsubmit="return false;">
+      <fieldset>
+       <legend>Customize your pizza</legend>
+       <label id="type">Size of pizza?</label>
+       <input type="radio" name="selectedpizza" value="Small" onclick="calculateTotal()" />
+       Small Pizza ($7)</input>
+       <input type="radio" name="selectedpizza" value="Medium"onclick="calculateTotal()" />
+       Medium Pizza ($10)</input>
+       <input type="radio" name="selectedpizza" value="Large"onclick="calculateTotal()" />
+       Large Pizza ($14)</input>
 
-      <label for="visitdate">Date of visit:</label>
-      <input name="visitdate" id="visitdate" placeholder="nn/nn/nn" type="text" />
-
-      <label for="receipt">Reciept number:</label>
-      <input name="receipt" id="receipt" placeholder="re-nnnnnn" type="text" />
-
-      <label id="correct">Was your order correct?</label>
-      <label for="yes">Yes</label>
-      <input type="radio" value = "yes" id="yes" onclick="handleClick(this);">
-      <label for="no">No</label>
-      <input type="radio" value ="no" id="no" onclick="handleClick(this);">
-   
-
+      <label id="type">How many toppings?</label>
+      <select id="topping" name='topping'onchange="calculateTotal()">
+      <option value="None">Select Amount</option>
+      <option value="oneTopping">One Topping ($2)</option>
+      <option value="twoTopping">Two Toppings ($3)</option>
+     </select>
+  
     </fieldset>
-
   </form>
+
   <script type="text/javascript" src="main.js"></script>
 
 </body>
