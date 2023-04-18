@@ -1,52 +1,83 @@
- fieldset {
-      background-color: rgb(255, 246, 205);
-      border: 1px solid rgb(233, 69, 0);
-      /*float:left; */
-      margin: 10px 0px 100px 2.5%;
-      width: 46%;
+ #wrap{
+	width:400px;
+	margin:0 auto;
+	text-align:left;
+	margin-top:8px;
+	padding:5px;
+	background:#fff;
+    font-family:AvenirLTStd, Arial, Helvetica, sans-serif;
+	font-size:13px;    
+    line-height:16px;
+}
+#wrap .cont_details fieldset,.cont_order fieldset{
+	margin:10px;
+	padding:20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+#wrap legend{
+	font-size:16px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#000;
+	font-weight:bold;
+	font-style:italic;
+    padding-bottom:10px;
+}
+#wrap .cont_details input{
+	margin-bottom:10px;
+	color:#000;
+}
+#wrap .input1:hover,.input1:active{
+	
+}
+#wrap label{
+	display:block;
+	font-size:12px;
+	color:#000;
+    font-weight:bold;
+}
+#wrap label.inlinelabel
+{
+    display:inline;
+}
+#wrap .cont_order input{
+	margin-bottom:5px;
+}
+#wrap .cont_order p{
+	padding-top:5px;
+}
 
-    }
+#wrap input[type="radio"]
+{
+margin-top:8px;
+margin-bottom:8px;
+}
 
-    legend {
-      background-color: rgb(233, 69, 0);
-      color: white;
-      padding: 3px 0px;
-      text-indent: 5px;
-      width: 100%;
-    }
+#wrap input[type="text"]:hover,
+#wrap input[type="text"]:active {
+background-color: #FAF398;
+}
 
-    label {
-      clear: left;
-      display: block;
-      float: left;
-      font-size: 0.9em;
-      margin: 7px 4% 7px 5px;
-      width: 40%;
-    }
+#wrap input#submit
+{
+margin:10px;
+padding-left:20px;
+padding-right:20px;
+padding-top:10px;
+padding-bottom:10px;
+}
 
-    input {
-      display: block;
-      float: left;
-      font-size: 0.9em;
-      margin: 7px 0px;
-      width: 50%;
-    }
+#wrap div#totalPrice
+{
+    padding:10px;
+    font-weight:bold;
+    background-color:#ff0;
+}
 
-    #state {
-      width: 50px;
-    }
-
-    select {
-      display: block;
-      float: left;
-      font-size: 0.9em;
-      margin: 7px 0px;
-
-    }
-
-    #correct {
-      font-size: 0.9em;
-      background-color: rgba(233, 70, 0, 0.65);
-      width: 48%;
-
-    }
+#wrap label.radiolabel
+{
+font-weight:normal;
+ display:inline;
+}
