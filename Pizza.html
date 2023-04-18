@@ -1,68 +1,58 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="UTF-8">
-  <title>Form Example 1</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Pizza Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-
 <body>
-
-  <form name="mainFrom" onsubmit="return false">
-
-    <fieldset id="custInfo">
-      <legend>Customer Information</legend>
-
-      <label for="custname"> Name:</label>
-      <input name="custname" id="custname" placeholder="first and last name" type="text" />
-
-      <label for="street">Street address:</label>
-      <input name="street" id="street" type="text" />
-
-      <label for="city">City:</label>
-      <input name="city" id="city" value="Seattle" type="text" />
-
-      <label for="state">State (abbr.):</label>
-      <input name="state" id="state" value="WA" type="text" />
-
-      <label for="zip"> Postal code</label>
-      <input name="zip" id="zip" placeholder="nnnn" type="text" />
-
-      <label for="ordertype">Order type</label>
-      <select name="ordertype" id="ordertype" size="1">
-        <option value="Carry Out"> Carry out</option>
-        <option value="Delivered" selected="selected"> Delivery</option>
-        <option value="Dine In"> Dine in</option>
-      </select>
-
-      <input type="submit" value="Submit" onclick="formSubmitEvent()">
-
-    </fieldset>
-
-    <form action="" id="pizzaform" onsubmit="return false;">
-      <fieldset>
-       <legend>Customize your pizza</legend>
-       <label id="type">Size of pizza?</label>
-       <input type="radio" name="selectedpizza" value="Small" onclick="calculateTotal()" />
-       Small Pizza ($7)</input>
-       <input type="radio" name="selectedpizza" value="Medium"onclick="calculateTotal()" />
-       Medium Pizza ($10)</input>
-       <input type="radio" name="selectedpizza" value="Large"onclick="calculateTotal()" />
-       Large Pizza ($14)</input>
-
-      <label id="type">How many toppings?</label>
-      <select id="topping" name='topping'onchange="calculateTotal()">
-      <option value="None">Select Amount</option>
-      <option value="oneTopping">One Topping ($2)</option>
-      <option value="twoTopping">Two Toppings ($3)</option>
-     </select>
+<body onload="hideTotal()">
+    <div id="wrap">
+        <form action="" id="pizzaform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>Make your own pizza!</legend>
+                <label>Size </label>
+                <label class="radiolabel"><input type="radio" name="selectedsize" value="Small" onclick="calculateTotal()">Small -  serves 8 people ($7)</label><br>
+                <label class="radiolabel"><input type="radio" name="selectedsize" value="Medium" onclick="calculateTotal()">Medium - serves 10 people ($10)</label><br>
+                <label class="radiolabel"><input type="radio" name="selectedsize" value="Large" onclick="calculateTotal()">Large - serves 12 people($14)</label><br>
+<br>
+                <label>Number of toppings</label>
+         
+                <select id="toppings" name="topping" onchange="calculateTotal()">
+                <option value="None">Select Toppings</option>
+                <option value="One">One($2)</option>
+                <option value="Two">Two($3)</option>
   
-    </fieldset>
-  </form>
+               </select>
+                <br>
 
-  <script type="text/javascript" src="main.js"></script>
+                <div id="totalPrice" style="display: none;"></div>
+                
+                </fieldset>
+            </div>
+            
+        	<div class="cont_details">
+            	<fieldset>
+                <legend>Contact Details</legend>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <br>
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address">
+                <br>
+                <label for="phonenumber">Phone Number</label>
+                <input type="text" id="phonenumber" name="phonenumber">
+                <br>
+                </fieldset>
+            </div>
+            <input type="submit" id="submit" value="Submit" onclick="calculateTotal()">
+        </div>  
+       </form>
+	</div><!--End of wrap-->
+
 
 </body>
-
 </html>
