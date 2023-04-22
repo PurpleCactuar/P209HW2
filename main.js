@@ -1,17 +1,18 @@
 
- //size of pizza
+  //size of pizza
  var pizza_prices = new Array();
  pizza_prices["Small"]=7;
  pizza_prices["Medium"]=10;
  pizza_prices["Large"]=14;
  
  //toppings
- var filling_prices= new Array();
- filling_prices["None"]=0;
- filling_prices["One"]=2;
- filling_prices["Two"]=3;
- 
-	 
+ var topping_prices= new Array();
+ topping_prices["None"]=0;
+ topping_prices["One"]=2;
+ topping_prices["Two"]=3;
+ var pizzaToppingPrice=0;
+ var pizzaSizePrice=0;
+
 function getPizzaSizePrice()
 {  
     var pizzaSizePrice=0;
@@ -25,22 +26,22 @@ function getPizzaSizePrice()
             break;
         }
     }
-    return pizzaSizePrice;
+    //return pizzaSizePrice;
 }
 
-function getFillingPrice()
+function getToppingPrice()
 {
-    var pizzaFillingPrice=0;
+    var pizzaToppingPrice=0;
     var theForm = document.forms["pizzaform"];
     var selectedTopping = theForm.elements["topping"];
     pizzaToppingPrice = topping_prices[selectedTopping.value];
-    return pizzaToppingPrice;
+    //return pizzaToppingPrice;
 }
 
         
 function calculateTotal()
 {
-    var pizzaPrice = getPizzaSizePrice() + getToppingPrice();
+    var pizzaPrice = pizzaSizePrice() + pizzaToppingPrice();
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='block';
     divobj.innerHTML = "Total Price For the Pizza $"+pizzaPrice;
