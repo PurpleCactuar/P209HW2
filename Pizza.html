@@ -15,13 +15,13 @@
                <fieldset>
                 <legend>Make your own pizza!</legend>
                 <label>Size </label>
-                <label class="radiolabel"><input type="radio" name="selectedsize" value="Small" onclick="calculateTotal()">Small -  serves 8 people ($7)</label><br>
-                <label class="radiolabel"><input type="radio" name="selectedsize" value="Medium" onclick="calculateTotal()">Medium - serves 10 people ($10)</label><br>
-                <label class="radiolabel"><input type="radio" name="selectedsize" value="Large" onclick="calculateTotal()">Large - serves 12 people($14)</label><br>
+                <label class="radiolabel"><input type="radio" name="selectedsize" value="Small" onclick="getPizzaSizePrice()">Small -  serves 8 people ($7)</label><br>
+                <label class="radiolabel"><input type="radio" name="selectedsize" value="Medium" onclick="getPizzaSizePrice()">Medium - serves 10 people ($10)</label><br>
+                <label class="radiolabel"><input type="radio" name="selectedsize" value="Large" onclick="getPizzaSizePrice()">Large - serves 12 people($14)</label><br>
 <br>
                 <label>Number of toppings</label>
          
-                <select id="toppings" name="topping" onchange="calculateTotal()">
+                <select id="topping" name="topping" onchange="getToppingPrice()">
                 <option value="None">Select Toppings</option>
                 <option value="One">One($2)</option>
                 <option value="Two">Two($3)</option>
@@ -51,7 +51,7 @@
             <input type="submit" id="submit" value="Submit" onclick="calculateTotal()">
         </div>  
        </form>
-	</div><!--End of wrap-->
+	</div>
 
 
 </body>
